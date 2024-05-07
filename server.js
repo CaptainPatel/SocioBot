@@ -4,6 +4,8 @@ import connectDb from "./src/config/db.js"
 import { message } from "telegraf/filters"
 import eventModel from "./src/models/Event.js";
 import gemini_run from "./gemini-pro.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
@@ -50,6 +52,7 @@ bot.command('generate', async (ctx) => {
 
     // reply with sticker
     const { message_id: stickerWaitingId } = await ctx.replyWithSticker(
+        // This is the message id for that sticker, nothing sensitive dw
         "CAACAgIAAxkBAAM4Zjdcb63X925aAAFcN4j0mo2aHT0NAAJ6DQACwJ_wS_593H1ydLDBNQQ"
     );
 
@@ -78,7 +81,7 @@ bot.command('generate', async (ctx) => {
     // make open ai api call 
 
     try {
-        const temp = `${events.map((event) => event.text).join(", ")}`
+        const temp = `${events.map((event) => event.text).join(",,")}`
         const result = await gemini_run(temp);
 
         // delete sticker before sending response
@@ -88,7 +91,9 @@ bot.command('generate', async (ctx) => {
         await ctx.reply(result);
 
     } catch (error) {
+        await ctx.deleteMessage(stickerWaitingId);
         await ctx.reply("Kuch toh gadbad h daya!😐");
+        await ctx.reply("Please Restart!");
         console.log(error.message);
     }
 
