@@ -8,11 +8,14 @@ Sociobot is a Telegram bot designed to simplify social media presence management
 2. **Import Dependencies**: Run `npm install` to import all the necessary dependencies.
 3. **Get Gemini API Key**: Obtain your Gemini API key from Google AI Studio.
 4. **Set Environment Variables**: Set up the following environment variables in a `.env` file:
+```
 BOT_TOKEN=your_telegram_bot_token_here
 MONGO_URI=your_mongo_uri_here
 API_KEY=your_gemini_api_key_here
+```
 
-5. **Start the Bot**: Run `npm run dev` to start the Sociobot. Ensure that you are using Node.js version 20.11 or higher. You can check your Node.js version by typing `node --version` in the terminal.
+
+6. **Start the Bot**: Run `npm run dev` to start the Sociobot. Ensure that you are using Node.js version 20.11 or higher. You can check your Node.js version by typing `node --version` in the terminal.
 
 ## System Requirements
 
