@@ -14,7 +14,6 @@ MONGO_URI=your_mongo_uri_here
 API_KEY=your_gemini_api_key_here
 ```
 
-
 6. **Start the Bot**: Run `npm run dev` to start the Sociobot. Ensure that you are using Node.js version 20.11 or higher. You can check your Node.js version by typing `node --version` in the terminal.
 
 ## System Requirements
