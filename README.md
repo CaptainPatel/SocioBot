@@ -19,7 +19,7 @@ API_KEY=your_gemini_api_key_here
 ## System Requirements
 
 - Node.js 20.11 or higher
-
+- 
 ## Features
 
 - **Easy Social Media Management**: Simplify your social media presence by generating posts for LinkedIn, Twitter, and Facebook with just a few lines of updates.
